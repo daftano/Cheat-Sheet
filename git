@@ -1,0 +1,86 @@
+Getting help:
+git help command or
+git command --help Show help for a command
+
+Repository creation:
+git init  » Create a repository in the current directory
+git clone url » Clone a remote repository into a subdirectory
+
+File operations:
+git add <dir><file1><file2> » Add file or files in directory recursively
+git rm path » Remove file from the working tree
+ -f Force deletion of file(s) from disk
+git mv path destination » Move file or directory to new location
+ -f Overwrite existing destination files
+git checkout [rev] file » Restore file from current branch or revision
+ -f Overwrite uncommitted local changes
+
+Working tree:
+git status -s » Show status of the working tree
+git diff [path] » Show diff of changes in the working tree
+git diff HEAD path » Show diff of stages and unstaged changes 
+git diff --cached --stat » Show diff of staged changes 
+git add path » Stage file for commit
+git reset HEAD path » Unstage file for commit
+git commit [-m 'msg'] » Commit files that has been staged
+ -a Automatically stage all modified files
+ --amend Replace last commit for a new one
+git reset --soft HEAD^ » Undo commit and keep changes in the workingtree
+git reset --hard HEAD^ » Reset the working tree to the last commit
+git clean » Clean unknown files from the working tree
+git revert <rev> » Reverse commit specified by <rev>
+
+Examining History:
+git log [path] » View commit log, optionally for specific path
+ ^branch View commit log without branch
+git log [from[..to]] » View commit log for a given revision range
+ --stat List diffstat for each revision
+ --oneline --graph - -decorate Show recent commits with decoration
+git blame [file] » Show who authored each line
+git ls-files » List all files in the index
+git whatchanged » Show logs with difference 
+
+Remote repositories - remotes:
+git fetch [repo] » Fetch changes from a remote repository
+git pull [repo] » Fetch and merge changes from a remote repo.
+git push [repo] [branch] » Push changes to a remote repository
+git remote » List remote repositories
+git remote add remote url » Add remote to list of tracked repositories
+
+Branches:
+git checkout branch » Switch working tree to branch
+ -b branch Create branch before switching to it
+git branch » List local branches
+ -d branch Delete the branch
+git branch -f branch rev » Overwrite existing branch, start from revision
+git merge branch » Merge changes from branch to actual branch
+git mergetool » Work through conflicted files 
+
+Exporting and importing:
+git apply - < file » Apply patch from stdin
+git format-patch from [..to] » Format a patch with log message and diffstat
+git archive rev > file » Export snapshot of revision to file
+ --prefix=dir/ Nest all files in the snapshot in directory
+ --format=[tar|zip] Specify archive format to use:tar or zip
+
+Tags:
+git tag name [revision] » Create tag for a given revision
+ -s Sign tag with your private key using GPG
+ -l [pattern] List tags, optionally matching pattern
+
+File status flags:
+M modified » File has been modified
+C copy-edit » File has been copied and modified
+R rename-edit » File has been renamed and modified
+A added » File has been added
+D deleted » File has been deleted
+U unmerged » File has conflicts after a merge
+
+Project/Repository configuration:
+git config user.name 'name'
+git config user.email name@email.com
+
+Global configuring:
+git config --global user.name 'name'
+git config --global user.email name@email.com
+Ignoring: Edit $GIT_DIR/info/exclude
